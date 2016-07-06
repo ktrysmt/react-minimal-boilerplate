@@ -1,36 +1,38 @@
 {
   "env": {
     "browser": true,
-      "commonjs": true,
-      "es6": true
+    "commonjs": true,
+    "es6": true
   },
-    "extends": "eslint:recommended",
-    "installedESLint": true,
-    "parserOptions": {
-      "ecmaFeatures": {
-        "experimentalObjectRestSpread": true,
-        "jsx": true
-      },
-      "sourceType": "module"
+  "extends": "eslint:recommended",
+  "installedESLint": true,
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
     },
-    "plugins": [
-      "react"
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "indent": [
+      "error"
     ],
-    "rules": {
-      "indent": [
-        "error"
-      ],
-      "linebreak-style": [
-        "error",
+    "linebreak-style": [
+      "error",
       "unix"
-      ],
-      "quotes": [
-        "error",
+    ],
+    "quotes": [
+      "error",
       "single"
-      ],
-      "semi": [
-        "error",
+    ],
+    "semi": [
+      "error",
       "always"
-      ]
-    }
+    ],
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error"
+  }
 }
