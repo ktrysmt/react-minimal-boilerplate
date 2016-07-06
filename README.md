@@ -1,4 +1,4 @@
-# React minimal boilerplate
+# React Minimal Boilerplate
 
 A minimal development set for react with babel, webpack, css, eslint and live-reloading.
 
