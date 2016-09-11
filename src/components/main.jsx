@@ -15,9 +15,9 @@ module.exports = React.createClass({
     render() {
       const t = this.state.text
       const m = this.props.message
-      const d = this.props.date
+      const d = this.props.date.toString()
       return ( 
-        <h1>{t}, {m}. ({d})</h1>
+        <div>{t}, {m}. ({d})</div>
       )  
     }
 });
