@@ -10,7 +10,7 @@ A minimal development set for react with babel, webpack, css, eslint, flowtype a
 - ESLint
 - webpack-dev-server
 - CSS & style loader
-- flowtype
+- Flowtype
 
 ## Usage
 
