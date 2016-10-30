@@ -1,5 +1,6 @@
-path = require('path');
-webpack = require('webpack');
+const path = require('path');
+const webpack = require('webpack');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 
 module.exports = {
   entry: './src/index.js',
@@ -19,5 +20,14 @@ module.exports = {
         loader: 'style!css'
       }
     ]
-  }
+  },
+  plugins: [
+    // new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.DedupePlugin(), 
+    new webpack.optimize.AggressiveMergingPlugin(),
+    new BrowserSyncPlugin({
+        server: { baseDir: ['./dist'] }
+    }), 
+  ] 
 }
