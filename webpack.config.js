@@ -9,25 +9,39 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /.jsx?$/,
-        loader: 'babel',
-        exclude: /node_modules/
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              'presets': [
+                'env',
+                'react'
+              ],
+              'plugins': [
+                'transform-class-properties'
+              ]
+            }
+          }
+        ]
       },
       {
         test: /.css$/,
-        loader: 'style!css'
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
       }
     ]
   },
   plugins: [
-    // new webpack.optimize.UglifyJsPlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.DedupePlugin(), 
+    // new webpack.optimize.UglifyJsPlugin({ sourceMap: true }),
     new webpack.optimize.AggressiveMergingPlugin(),
     new BrowserSyncPlugin({
         server: { baseDir: ['./dist'] }
-    }), 
-  ] 
+    }),
+  ]
 }
